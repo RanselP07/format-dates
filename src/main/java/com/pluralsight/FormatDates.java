@@ -14,7 +14,7 @@ public class FormatDates {
         String date = today.getDayOfWeek() + ", " + today.getMonth() + " " + today.getDayOfMonth() + ", " + today.getYear();
         int hour = today.getHour();
 
-        if (hour >= 12){
+        if (hour == 12){
             hour -= 12;
         }
 
