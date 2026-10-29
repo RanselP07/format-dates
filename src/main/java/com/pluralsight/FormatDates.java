@@ -12,12 +12,20 @@ public class FormatDates {
         DateTimeFormatter iso = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         String date = today.getDayOfWeek() + ", " + today.getMonth() + " " + today.getDayOfMonth() + ", " + today.getYear();
-        String dateTime = date + " " + today.getHour() + ":" + today.getMinute();
+        int hour = today.getHour();
+
+        if (hour >= 12){
+            hour -= 12;
+        }
+
+        String militaryDateTime = date + " " + today.getHour() + ":" + today.getMinute();
+        String regularDateTime = date + " " + hour + ":" + today.getMinute();
 
         System.out.println(today.format(american));
         System.out.println(today.format(iso));
         System.out.println(date);
-        System.out.println(dateTime);
+        System.out.println(militaryDateTime);
+        System.out.println(regularDateTime);
     }
 
 }
